@@ -107,7 +107,7 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 children: [
                   SvgPicture.asset(
-                    'lib/img/ticket_primary.svg',
+                    'lib/img/shop.svg',
                     height: 20,
                   ),
                   SizedBox(width: 8),
