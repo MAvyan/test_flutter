@@ -87,30 +87,39 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 16.0),
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFFFFE3BA),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+          child: GestureDetector(
+            onTap: () {
+              // Add your onTap logic here
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFFFFE3BA), // Starting color
+                    Color(0xFFFFC107), // Ending color (more yellow)
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+                borderRadius: BorderRadius.circular(20), // Rounded corners
               ),
               padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            ),
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  'lib/img/ticket_primary.svg',
-                  height: 20,
-                ),
-                SizedBox(width: 8),
-                Text(
-                  'Boutique',
-                  style: TextStyle(
-                    color: Color(0xFF364F6B),
-                    fontWeight: FontWeight.bold,
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    'lib/img/ticket_primary.svg',
+                    height: 20,
                   ),
-                ),
-              ],
+                  SizedBox(width: 8),
+                  Text(
+                    'Boutique',
+                    style: TextStyle(
+                      color: Color(0xFF364F6B),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
