@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'BottomNavigationBar.dart';  // Assurez-vous que le chemin est correct
-
+import 'BottomNavigationBar.dart';
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Center(child: Text('Home Page')),
-        bottomNavigationBar: BottomNavBar(), // Ajoute la navbar ici
+        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }
