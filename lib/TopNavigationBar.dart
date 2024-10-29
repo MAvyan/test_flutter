@@ -23,7 +23,7 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
                 Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xFFFFE3BA),
+                    color: Color(0xFFFFC107),
                   ),
                   width: 40,
                   height: 40,
@@ -41,8 +41,8 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
                 ClipOval(
                   child: Image.asset(
                     'lib/img/person.png',
-                    width: 30,
-                    height: 30,
+                    width: 38,
+                    height: 38,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -58,7 +58,7 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     SvgPicture.asset(
                       'lib/img/coins.svg',
-                      height: 16,
+                      height: 22,
                     ),
                     SizedBox(width: 4),
                     Text(
