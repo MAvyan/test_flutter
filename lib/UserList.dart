@@ -109,8 +109,8 @@ class UserList extends StatelessWidget {
                               child: Text(
                                 '/',
                                 style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.normal,
                                   color: Color(0xFF7584FF),
                                 ),
                               ),
@@ -143,8 +143,8 @@ class UserList extends StatelessWidget {
                                   Text(
                                     user['pseudo'],
                                     style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w900,
                                       color: Colors.black87,
                                     ),
                                   ),
@@ -157,7 +157,7 @@ class UserList extends StatelessWidget {
                                   '${user['balance']}',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w900,
                                     color: Colors.black87,
                                   ),
                                 ),
