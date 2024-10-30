@@ -87,7 +87,7 @@ class UserList extends StatelessWidget {
                         children: [
                           // Rank Number with padding
                           Padding(
-                            padding: const EdgeInsets.only(right: 4.0), // Right padding for rank
+                            padding: const EdgeInsets.only(right: 4.0, left: 4.0), // Right padding for rank
                             child: Text(
                               '${user['global_rank']}', // Display rank
                               style: TextStyle(
@@ -98,7 +98,7 @@ class UserList extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 4.0), // Padding around slash
+                            padding: const EdgeInsets.symmetric(horizontal: 24), // Padding around slash
                             child: Text(
                               '/', // Display slash
                               style: TextStyle(

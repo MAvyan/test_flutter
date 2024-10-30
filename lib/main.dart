@@ -6,8 +6,6 @@ import 'UserList.dart';          // Import the UserList widget
 import 'package:firebase_core/firebase_core.dart';  // Import Firebase Core
 import 'firebase_options.dart';  // Import the generated Firebase options
 
-var connectedUser = "wSibajYUNWp62yLeMXaO";
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();  // Ensure Flutter binding
   await Firebase.initializeApp(               // Initialize Firebase
