@@ -25,8 +25,8 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
                     shape: BoxShape.circle,
                     color: Color(0xFFFFC107),
                   ),
-                  width: 40,
-                  height: 40,
+                  width: 45,
+                  height: 45,
                 ),
                 SizedBox(
                   width: 45,
@@ -41,8 +41,8 @@ class TopNavigationBar extends StatelessWidget implements PreferredSizeWidget {
                 ClipOval(
                   child: Image.asset(
                     'lib/img/person.png',
-                    width: 38,
-                    height: 38,
+                    width: 40,
+                    height: 40,
                     fit: BoxFit.cover,
                   ),
                 ),
