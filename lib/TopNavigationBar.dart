@@ -107,7 +107,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                 Row(
                   children: [
                     Text(
-                      globalRank != null ? '#$globalRank' : '#0',
+                      rankSquad ?? '-',
                       style: TextStyle(
                         color: Color(0xFF333C75),
                         fontSize: 14,
@@ -116,7 +116,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                     ),
                     SizedBox(width: 4),
                     Text(
-                      rankSquad ?? '-',
+                      globalRank != null ? '#$globalRank' : '#0',
                       style: TextStyle(
                         color: Color(0xFF333C75),
                         fontSize: 14,
