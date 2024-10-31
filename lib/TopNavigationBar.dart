@@ -39,6 +39,9 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
+    // Define a base text style for Poppins
+    const poppinsTextStyle = TextStyle(fontFamily: 'Poppins');
+
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -48,7 +51,6 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
         padding: const EdgeInsets.only(left: 10.0, top: 6.0, bottom: 6.0),
         child: Row(
           children: [
-            // Profile picture with progress bar
             Stack(
               alignment: Alignment.center,
               children: [
@@ -82,7 +84,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
             ),
             SizedBox(width: 8),
 
-            // Balance and Ranking
+            // Balance and Ranking Texts
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,10 +98,10 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                     SizedBox(width: 4),
                     Text(
                       balance?.toString() ?? '0',
-                      style: TextStyle(
-                        color: Colors.black,
+                      style: poppinsTextStyle.copyWith(
+                        color: Color(0xFF4252B3),
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 15,
                       ),
                     ),
                   ],
@@ -108,18 +110,18 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                   children: [
                     Text(
                       rankSquad ?? '-',
-                      style: TextStyle(
+                      style: poppinsTextStyle.copyWith(
                         color: Color(0xFF333C75),
-                        fontSize: 14,
+                        fontSize: 10,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(width: 4),
                     Text(
                       globalRank != null ? '#$globalRank' : '#0',
-                      style: TextStyle(
+                      style: poppinsTextStyle.copyWith(
                         color: Color(0xFF333C75),
-                        fontSize: 14,
+                        fontSize: 10,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -156,7 +158,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                   SizedBox(width: 8),
                   Text(
                     'Boutique',
-                    style: TextStyle(
+                    style: poppinsTextStyle.copyWith(
                       color: Color(0xFF364F6B),
                       fontWeight: FontWeight.bold,
                     ),

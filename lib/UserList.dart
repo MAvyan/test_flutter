@@ -8,6 +8,8 @@ class UserList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const poppinsTextStyle = TextStyle(fontFamily: 'Poppins');
+
     return Container(
       color: Color(0xFFECF1FF),
       child: Column(
@@ -18,27 +20,33 @@ class UserList extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'CLASSEMENT',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF333C75),
-                  ),
-                ),
-                Text(
-                  'AMIS',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF333C75),
-                  ),
+                // Combining CLASSEMENT and AMIS into a single Row
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      'CLASSEMENT ',
+                      style: poppinsTextStyle.copyWith(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF333C75),
+                      ),
+                    ),
+                    Text(
+                      'AMIS',
+                      style: poppinsTextStyle.copyWith(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF333C75),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 4),
                 Text(
                   'Compare ton classement avec tes amis et regarde lequel est le meilleur d\'entre vous',
-                  style: TextStyle(
-                    fontSize: 14,
+                  style: poppinsTextStyle.copyWith(
+                    fontSize: 18,
                     color: Color(0xFF333C75),
                   ),
                 ),
@@ -97,7 +105,7 @@ class UserList extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Text(
                                 '$friendRank',
-                                style: TextStyle(
+                                style: poppinsTextStyle.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFF7584FF),
@@ -108,7 +116,7 @@ class UserList extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(horizontal: 24),
                               child: Text(
                                 '/',
-                                style: TextStyle(
+                                style: poppinsTextStyle.copyWith(
                                   fontSize: 28,
                                   fontWeight: FontWeight.normal,
                                   color: Color(0xFF7584FF),
@@ -142,9 +150,9 @@ class UserList extends StatelessWidget {
                                   SizedBox(width: 10),
                                   Text(
                                     user['pseudo'],
-                                    style: TextStyle(
+                                    style: poppinsTextStyle.copyWith(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.black87,
                                     ),
                                   ),
@@ -155,9 +163,9 @@ class UserList extends StatelessWidget {
                               children: [
                                 Text(
                                   '${user['balance']}',
-                                  style: TextStyle(
+                                  style: poppinsTextStyle.copyWith(
                                     fontSize: 16,
-                                    fontWeight: FontWeight.w900,
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.black87,
                                   ),
                                 ),
@@ -166,7 +174,7 @@ class UserList extends StatelessWidget {
                                   'lib/img/coins.svg',
                                   height: 20,
                                 ),
-                                SizedBox(width: 20), // Padding to the right of the coin icon
+                                SizedBox(width: 20),
                               ],
                             ),
                           ],

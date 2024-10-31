@@ -44,3 +44,9 @@ flutter:
     - lib/img/sticker.svg
     - lib/img/share.svg
     - lib/img/premium.png
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+        - asset: fonts/Poppins-Bold.ttf
+          weight: 700

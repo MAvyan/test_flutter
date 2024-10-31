@@ -15,7 +15,7 @@ class UserDetailPage extends StatelessWidget {
           // Upper section with rounded bottom corners and background color
           Container(
             decoration: BoxDecoration(
-              color: Color(0xFF333C75),
+              color: Color(0xFF1a1750),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
@@ -30,7 +30,7 @@ class UserDetailPage extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () => Navigator.of(context).pop(),
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                       decoration: BoxDecoration(
                         color: Color(0xFF7584FF),
                         borderRadius: BorderRadius.circular(8),
@@ -95,7 +95,7 @@ class UserDetailPage extends StatelessWidget {
                                 child: CircleAvatar(
                                   backgroundImage: AssetImage('lib/img/person.png'),
                                   radius: 38,
-                                  backgroundColor: Color(0xFFEE9714),
+                                  backgroundColor: Color(0xFFdea483),
                                 ),
                               ),
                               // Level Circle with Progress Bar
@@ -107,9 +107,9 @@ class UserDetailPage extends StatelessWidget {
                                   children: [
                                     CircularProgressIndicator(
                                       value: 0.7, // Set progress here
-                                      strokeWidth: 4,
+                                      strokeWidth: 2,
                                       valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                                      backgroundColor: Colors.transparent,
+                                      backgroundColor: Colors.white,
                                     ),
                                     Container(
                                       width: 35,
@@ -124,7 +124,7 @@ class UserDetailPage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12,
+                                          fontSize: 8,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -200,8 +200,9 @@ class UserDetailPage extends StatelessWidget {
                               child: Container(
                                 padding: EdgeInsets.all(8),
                                 decoration: BoxDecoration(
-                                  color: Color(0xFF7584FF),
-                                  shape: BoxShape.circle,
+                                  color: Color(0xFF4252B3),
+                                  shape: BoxShape.rectangle,
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: SvgPicture.asset(
                                   'lib/img/$icon',
