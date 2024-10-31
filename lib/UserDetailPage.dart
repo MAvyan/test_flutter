@@ -198,7 +198,7 @@ class UserDetailPage extends StatelessWidget {
                                 // Add actions for each button as needed
                               },
                               child: Container(
-                                padding: EdgeInsets.all(8),
+                                padding: EdgeInsets.all(4),
                                 decoration: BoxDecoration(
                                   color: Color(0xFF4252B3),
                                   shape: BoxShape.rectangle,
@@ -206,7 +206,7 @@ class UserDetailPage extends StatelessWidget {
                                 ),
                                 child: SvgPicture.asset(
                                   'lib/img/$icon',
-                                  height: 20,
+                                  height: 40,
                                   color: Colors.white, // Set the color to white
                                 ),
                               ),
