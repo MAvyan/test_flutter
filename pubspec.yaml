@@ -40,3 +40,7 @@ flutter:
     - lib/img/shop.svg
     - lib/img/person.png
     - lib/img/coins.svg
+    - lib/img/settings.svg
+    - lib/img/sticker.svg
+    - lib/img/share.svg
+    - lib/img/premium.png
