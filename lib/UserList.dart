@@ -5,6 +5,7 @@ import 'package:intl/intl.dart'; // Import the intl package
 import 'UserDetailPage.dart';
 
 class UserList extends StatelessWidget {
+  final String connectedUser = "wSibajYUNWp62yLeMXaO";
   final CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   @override
@@ -27,25 +28,31 @@ class UserList extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Combining CLASSEMENT and AMIS into a single Row
+                  // Combining CLASSEMENT and AMIS into a single Column
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'CLASSEMENT ',
-                        style: poppinsTextStyle.copyWith(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF333C75),
-                        ),
-                      ),
-                      Text(
-                        'AMIS',
-                        style: poppinsTextStyle.copyWith(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF333C75),
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'CLASSEMENT',
+                            style: poppinsTextStyle.copyWith(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF333C75),
+                            ),
+                          ),
+                          SizedBox(height: 2), // Reduced space between CLASSEMENT and AMIS
+                          Text(
+                            'AMIS',
+                            style: poppinsTextStyle.copyWith(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF333C75),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -80,6 +87,7 @@ class UserList extends StatelessWidget {
                     itemBuilder: (context, index) {
                       var user = data[index];
                       final friendRank = index + 1;
+                      final isConnectedUser = user.id == connectedUser;
 
                       return GestureDetector(
                         onTap: () {
@@ -94,8 +102,9 @@ class UserList extends StatelessWidget {
                           margin: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
                           padding: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: isConnectedUser ? Color(0xFF7584FF) : Colors.white,
                             borderRadius: BorderRadius.circular(12.0),
+                            border: isConnectedUser ? Border.all(color: Colors.white, width: 2) : null,
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.3),
@@ -115,7 +124,7 @@ class UserList extends StatelessWidget {
                                   style: poppinsTextStyle.copyWith(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
-                                    color: Color(0xFF7584FF),
+                                    color: isConnectedUser ? Colors.white : Color(0xFF7584FF),
                                   ),
                                 ),
                               ),
@@ -126,7 +135,7 @@ class UserList extends StatelessWidget {
                                   style: poppinsTextStyle.copyWith(
                                     fontSize: 28,
                                     fontWeight: FontWeight.normal,
-                                    color: Color(0xFF7584FF),
+                                    color: isConnectedUser ? Colors.white : Color(0xFF7584FF),
                                   ),
                                 ),
                               ),
@@ -139,6 +148,7 @@ class UserList extends StatelessWidget {
                                         Container(
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
+                                            border: isConnectedUser ? Border.all(color: Colors.white, width: 2) : null,
                                             color: Color(0xFF7584FF),
                                           ),
                                           width: 40,
@@ -160,7 +170,7 @@ class UserList extends StatelessWidget {
                                       style: poppinsTextStyle.copyWith(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black87,
+                                        color: isConnectedUser ? Colors.white : Colors.black87,
                                       ),
                                     ),
                                   ],
@@ -173,7 +183,7 @@ class UserList extends StatelessWidget {
                                     style: poppinsTextStyle.copyWith(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.black87,
+                                      color: isConnectedUser ? Colors.white : Colors.black87,
                                     ),
                                   ),
                                   SizedBox(width: 4),

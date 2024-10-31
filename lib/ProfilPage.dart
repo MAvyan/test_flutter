@@ -126,17 +126,20 @@ class _ProfilPageState extends State<ProfilPage> {
                           padding: const EdgeInsets.only(left: 8.0), // Add left padding
                           child: Image.asset(
                             'lib/img/premium.png',
-                            height: 64,
+                            height: 72,
                           ),
                         ),
                         SizedBox(height: 4),
-                        Text(
-                          _formatDuration(_duration),
-                          style: poppinsTextStyle.copyWith(
-                            color: Colors.white,
-                            fontSize: 10,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 2.0), // Add left padding
+                          child: Text(
+                            _formatDuration(_duration),
+                            style: poppinsTextStyle.copyWith(
+                              color: Colors.white,
+                              fontSize: 10,
+                            ),
+                            textAlign: TextAlign.center, // Center align the text
                           ),
-                          textAlign: TextAlign.center, // Center align the text
                         ),
                       ],
                     ),
@@ -152,42 +155,61 @@ class _ProfilPageState extends State<ProfilPage> {
                             children: [
                               // Profile Picture Circle
                               CircleAvatar(
-                                radius: 40,
+                                radius: 50, // Increased radius
                                 backgroundColor: Colors.white,
                                 child: CircleAvatar(
                                   backgroundImage: AssetImage('lib/img/person.png'),
-                                  radius: 38,
+                                  radius: 46, // Increased radius
                                   backgroundColor: Color(0xFFdea483),
                                 ),
                               ),
                               // Level Circle with Progress Bar
                               Positioned(
-                                bottom: -4, // Position it slightly outside bottom-right
-                                right: -4,
+                                bottom: 0, // Adjusted position to show entirely
+                                right: 0, // Adjusted position to show entirely
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
-                                    CircularProgressIndicator(
-                                      value: 0.7, // Set progress here
-                                      strokeWidth: 2,
-                                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                                      backgroundColor: Colors.white,
+                                    SizedBox(
+                                      width: 35, // Increased width
+                                      height: 35, // Increased height
+                                      child: CircularProgressIndicator(
+                                        value: 0.7, // Set progress here
+                                        strokeWidth: 6,
+                                        valueColor: AlwaysStoppedAnimation<Color>(const Color(0xFF108236)),
+                                        backgroundColor: Colors.white,
+                                      ),
                                     ),
                                     Container(
-                                      width: 35,
-                                      height: 35,
+                                      width: 35, // Adjusted width
+                                      height: 35, // Adjusted height
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: Color(0xFF7584FF),
+                                        color: Color(0xFF4252B3),
                                       ),
                                       alignment: Alignment.center,
-                                      child: Text(
-                                        'Niv\n${widget.user['level']}',
+                                      child: RichText(
                                         textAlign: TextAlign.center,
-                                        style: poppinsTextStyle.copyWith(
-                                          color: Colors.white,
-                                          fontSize: 8,
-                                          fontWeight: FontWeight.bold,
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: 'Niv\n',
+                                              style: poppinsTextStyle.copyWith(
+                                                color: Colors.white,
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '${widget.user['level']}',
+                                              style: poppinsTextStyle.copyWith(
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                                height: 1, // Adjust line height to reduce space
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -271,7 +293,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                 ),
                                 child: SvgPicture.asset(
                                   'lib/img/$icon',
-                                  height: 40,
+                                  height: icon == 'share.svg' ? 35 : 40, // Set the height for share.svg
                                   color: Colors.white, // Set the color to white
                                 ),
                               ),
