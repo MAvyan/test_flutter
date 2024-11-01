@@ -13,10 +13,9 @@ class StatsPage extends StatelessWidget {
     const poppinsTextStyle = TextStyle(fontFamily: 'Poppins', color: Color(0xFF333C75));
 
     return Container(
-      color: Color(0xFFECF1FF), // Set the background color to match UserList
+      color: Color(0xFFECF1FF),
       child: Column(
         children: [
-          // First row with three square containers
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -27,7 +26,7 @@ class StatsPage extends StatelessWidget {
                     iconPath: 'lib/img/shield.svg',
                     statValue: user['ligue_rank'].toString(),
                     label: 'Classement Ligue',
-                    textStyle: poppinsTextStyle.copyWith(fontSize: 20), // Slightly smaller font size
+                    textStyle: poppinsTextStyle.copyWith(fontSize: 20),
                     keepOriginalColor: true,
                   ),
                 ),
@@ -38,7 +37,7 @@ class StatsPage extends StatelessWidget {
                   iconPath: 'lib/img/crown.svg',
                   statValue: user['hof_rank'].toString(),
                   label: 'Classement Hall of Fame',
-                  textStyle: poppinsTextStyle.copyWith(fontSize: 20), // Slightly smaller font size
+                  textStyle: poppinsTextStyle.copyWith(fontSize: 20),
                   keepOriginalColor: true,
                 ),
               ),
@@ -50,16 +49,15 @@ class StatsPage extends StatelessWidget {
                     iconPath: 'lib/img/field_primary.svg',
                     statValue: user['won_games'].toString(),
                     label: 'Nombre de partie gagnées',
-                    textStyle: poppinsTextStyle.copyWith(fontSize: 20), // Slightly smaller font size
+                    textStyle: poppinsTextStyle.copyWith(fontSize: 20),
                     keepOriginalColor: true,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16), // Space between rows
+          SizedBox(height: 16),
 
-          // Second row with one wide container
           Container(
             margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             padding: EdgeInsets.all(16),
@@ -68,9 +66,9 @@ class StatsPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.4), // Increased opacity
-                  spreadRadius: 5, // Increased spread radius
-                  blurRadius: 10, // Increased blur radius
+                  color: Colors.grey.withOpacity(0.4),
+                  spreadRadius: 5,
+                  blurRadius: 10,
                   offset: Offset(0, 3),
                 ),
               ],
@@ -84,14 +82,14 @@ class StatsPage extends StatelessWidget {
                     Text(
                       user['total_generated'].toString(),
                       style: poppinsTextStyle.copyWith(
-                        fontSize: 28, // Increased font size
+                        fontSize: 28,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: 2), // Reduced space between number and SVG
+                    SizedBox(width: 2),
                     SvgPicture.asset(
                       'lib/img/coins.svg',
-                      height: 28, // Increased icon size
+                      height: 28,
                     ),
                   ],
                 ),
@@ -99,7 +97,7 @@ class StatsPage extends StatelessWidget {
                 Text(
                   'Nombre total de Genius Coins générée',
                   style: poppinsTextStyle.copyWith(
-                    fontSize: 12, // Increased font size
+                    fontSize: 12,
                     color: Color(0xFF333C75),
                   ),
                   textAlign: TextAlign.center,
@@ -109,7 +107,6 @@ class StatsPage extends StatelessWidget {
           ),
           SizedBox(height: 16),
 
-          // Third row with three square containers
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -119,7 +116,7 @@ class StatsPage extends StatelessWidget {
                   child: _buildStatSquare(
                     statValue: '${user['validated_odds_rate']}%',
                     label: 'Taux de cotes validés',
-                    textStyle: poppinsTextStyle.copyWith(fontSize: 22), // Increased font size
+                    textStyle: poppinsTextStyle.copyWith(fontSize: 22),
                     isPercentage: true,
                   ),
                 ),
@@ -129,7 +126,7 @@ class StatsPage extends StatelessWidget {
                 child: _buildStatSquare(
                   statValue: '${user['won_game_rate']}%',
                   label: 'Taux de parties gagnantes',
-                  textStyle: poppinsTextStyle.copyWith(fontSize: 22), // Increased font size
+                  textStyle: poppinsTextStyle.copyWith(fontSize: 22),
                   isPercentage: true,
                 ),
               ),
@@ -140,7 +137,7 @@ class StatsPage extends StatelessWidget {
                   child: _buildStatSquare(
                     statValue: '${user['successful_rapid_bet_rate']}%',
                     label: 'Taux de pronos rapides réussis',
-                    textStyle: poppinsTextStyle.copyWith(fontSize: 22), // Increased font size
+                    textStyle: poppinsTextStyle.copyWith(fontSize: 22), 
                     isPercentage: true,
                   ),
                 ),
@@ -149,18 +146,17 @@ class StatsPage extends StatelessWidget {
           ),
           SizedBox(height: 16),
 
-          // Smaller button at the bottom
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 130, vertical: 8), // Reduced horizontal margin
+            margin: EdgeInsets.symmetric(horizontal: 130, vertical: 8),
             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.4), // Increased opacity
-                  spreadRadius: 5, // Increased spread radius
-                  blurRadius: 10, // Increased blur radius
+                  color: Colors.grey.withOpacity(0.4),
+                  spreadRadius: 5, 
+                  blurRadius: 10,
                   offset: Offset(0, 3),
                 ),
               ],
@@ -171,7 +167,7 @@ class StatsPage extends StatelessWidget {
                 Text(
                   'Voir toutes les stats',
                   style: poppinsTextStyle.copyWith(
-                    fontSize: 16, // Increased font size
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -180,12 +176,12 @@ class StatsPage extends StatelessWidget {
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white, // White inside
-                    border: Border.all(color: Color(0xFF7584FF), width: 2), // Blue border
+                    color: Colors.white,
+                    border: Border.all(color: Color(0xFF7584FF), width: 2),
                   ),
                   child: Icon(
                     Icons.add,
-                    color: Color(0xFF7584FF), // Blue icon
+                    color: Color(0xFF7584FF),
                     size: 16,
                   ),
                 ),
@@ -197,7 +193,6 @@ class StatsPage extends StatelessWidget {
     );
   }
 
-  // Helper method to build a statistic square
   Widget _buildStatSquare({
     String? iconPath,
     required String statValue,
@@ -207,16 +202,16 @@ class StatsPage extends StatelessWidget {
     bool keepOriginalColor = false,
   }) {
     return Container(
-      height: 120, // Increased height to make space for the text
+      height: 120,
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.4), // Increased opacity
-            spreadRadius: 5, // Increased spread radius
-            blurRadius: 10, // Increased blur radius
+            color: Colors.grey.withOpacity(0.4),
+            spreadRadius: 5, 
+            blurRadius: 10,
             offset: Offset(0, 3),
           ),
         ],
@@ -227,22 +222,22 @@ class StatsPage extends StatelessWidget {
           if (iconPath != null)
             SvgPicture.asset(
               iconPath,
-              height: 28, // Increased icon size
+              height: 28,
               color: keepOriginalColor ? null : Colors.grey[700],
             ),
-          SizedBox(height: 4), // Reduced space between icon and text
+          SizedBox(height: 4),
           Text(
             statValue,
             style: textStyle.copyWith(
-              fontSize: 24, // Increased font size
+              fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8), // Increased space between value and label
+          SizedBox(height: 8),
           Text(
             label,
             style: textStyle.copyWith(
-              fontSize: 10, // Reduced font size for labels
+              fontSize: 10,
             ),
             textAlign: TextAlign.center,
           ),

@@ -1,9 +1,8 @@
-// UserDetailPage.dart
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'ProfilPage.dart'; // Import the new ProfilPage
-import 'StatsPage.dart'; // Import the new StatsPage
-import 'GeniusPass.dart'; // Import the new GeniusPass
+import 'ProfilPage.dart';
+import 'StatsPage.dart';
+import 'GeniusPass.dart';
 
 class UserDetailPage extends StatelessWidget {
   final QueryDocumentSnapshot user;
@@ -14,13 +13,13 @@ class UserDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFFECF1FF), // Set the background color to match UserList and StatsPage
+        color: Color(0xFFECF1FF),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ProfilPage(user: user), // Use the ProfilPage widget
-              GeniusPass(user: user), // Pass the user parameter to GeniusPass
-              StatsPage(user: user), // Use the StatsPage widget
+              ProfilPage(user: user), 
+              GeniusPass(user: user),
+              StatsPage(user: user),
             ],
           ),
         ),

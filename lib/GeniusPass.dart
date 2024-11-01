@@ -11,21 +11,20 @@ class GeniusPass extends StatelessWidget {
   Widget build(BuildContext context) {
     const poppinsTextStyle = TextStyle(fontFamily: 'Poppins', color: Color(0xFF333C75));
     const whiteTextStyle = TextStyle(fontFamily: 'Poppins', color: Colors.white);
+    const voirPlusTextStyle = TextStyle(fontFamily: 'Poppins', color: Color(0xFF7584FF));
 
     return Container(
-      color: Color(0xFFECF1FF), // Outer background color
+      color: Color(0xFFECF1FF),
       child: Center(
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            // Top half with darker blue, bottom half with lighter blue
             Positioned.fill(
               child: Column(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                        // Darker blue with bottom-left more rounded corner
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
@@ -36,7 +35,6 @@ class GeniusPass extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Darker blue with bottom-right more rounded corner
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
@@ -53,18 +51,17 @@ class GeniusPass extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: [
-                        Expanded(child: Container(color: Color(0xFFECF1FF))), // Lighter blue on the left
-                        Expanded(child: Container(color: Color(0xFFECF1FF))), // Lighter blue on the right
+                        Expanded(child: Container(color: Color(0xFFECF1FF))),
+                        Expanded(child: Container(color: Color(0xFFECF1FF))),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            // Main content container with added margin at the bottom
             Center(
               child: Padding(
-                padding: EdgeInsets.only(bottom: 40), // Adjust the value as needed
+                padding: EdgeInsets.only(bottom: 40),
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   decoration: BoxDecoration(
@@ -105,7 +102,7 @@ class GeniusPass extends StatelessWidget {
                               top: 25,
                               child: Text(
                                 user['points_genius_pass'].toString(),
-                                style: whiteTextStyle.copyWith(
+                                style: voirPlusTextStyle.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -130,16 +127,15 @@ class GeniusPass extends StatelessWidget {
                 ),
               ),
             ),
-            // Smaller div at the bottom center
             Positioned(
-              bottom: 30, // Adjust the value to overlap the main div
-              left: MediaQuery.of(context).size.width / 2 - 56, // Center the div
+              bottom: 30,
+              left: MediaQuery.of(context).size.width / 2 - 56,
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12), // Reduced padding
+                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                 decoration: BoxDecoration(
-                  color: Color(0xFF7584FF), // Same color as the 'Retour' button
-                  borderRadius: BorderRadius.circular(20), // Really rounded corners
-                  border: Border.all(color: Colors.white, width: 2), // White border
+                  color: Color(0xFF7584FF),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.4),
@@ -155,15 +151,15 @@ class GeniusPass extends StatelessWidget {
                     Text(
                       'Voir plus',
                       style: whiteTextStyle.copyWith(
-                        fontSize: 14, // Reduced font size
+                        fontSize: 14,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    SizedBox(width: 2), // Reduced space between text and icon
+                    SizedBox(width: 2),
                     Icon(
                       Icons.add,
                       color: Colors.white,
-                      size: 14, // Reduced icon size
+                      size: 14,
                     ),
                   ],
                 ),

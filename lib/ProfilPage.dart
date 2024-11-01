@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart'; // Import the intl package
+import 'package:intl/intl.dart';
 
 class ProfilPage extends StatefulWidget {
   final QueryDocumentSnapshot user;
@@ -21,7 +21,6 @@ class _ProfilPageState extends State<ProfilPage> {
   @override
   void initState() {
     super.initState();
-    // Initialize the duration (e.g., 2 days, 12 hours, 30 minutes)
     _duration = Duration(days: 2, hours: 12, minutes: 30);
     _startTimer();
   }
@@ -64,7 +63,6 @@ class _ProfilPageState extends State<ProfilPage> {
 
     return Column(
       children: [
-        // Upper section with background color
         Container(
           decoration: BoxDecoration(
             color: Color(0xFF1a1750),
@@ -72,11 +70,10 @@ class _ProfilPageState extends State<ProfilPage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // Retour Button
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 16.0), // Reduced top padding
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: GestureDetector(
                     onTap: () => Navigator.of(context).pop(),
                     child: Container(
@@ -104,19 +101,18 @@ class _ProfilPageState extends State<ProfilPage> {
                   ),
                 ),
               ),
-              // Main content row with left, center, and right columns
+              SizedBox(height: 4),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Left Column: Premium Image and Timer
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start, // Align to the start
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 24), // Adjust this value to move the image lower
+                      SizedBox(height: 24),
                       Padding(
-                        padding: const EdgeInsets.only(left: 8.0), // Add left padding
+                        padding: const EdgeInsets.only(left: 8.0),
                         child: Image.asset(
                           'lib/img/premium.png',
                           height: 72,
@@ -124,58 +120,54 @@ class _ProfilPageState extends State<ProfilPage> {
                       ),
                       SizedBox(height: 4),
                       Padding(
-                        padding: const EdgeInsets.only(left: 2.0), // Add left padding
+                        padding: const EdgeInsets.only(left: 2.0),
                         child: Text(
                           _formatDuration(_duration),
                           style: poppinsTextStyle.copyWith(
                             color: Colors.white,
                             fontSize: 10,
                           ),
-                          textAlign: TextAlign.center, // Center align the text
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
                   ),
-
-                  // Center Column: Profile Picture, Pseudo, Rank, Balance
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 46.0), // Reduced left padding
+                    padding: const EdgeInsets.only(left: 8.0, right: 46.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Stack(
                           alignment: Alignment.center,
                           children: [
-                            // Profile Picture Circle
                             CircleAvatar(
-                              radius: 50, // Increased radius
+                              radius: 50,
                               backgroundColor: Colors.white,
                               child: CircleAvatar(
                                 backgroundImage: AssetImage('lib/img/person.png'),
-                                radius: 46, // Increased radius
+                                radius: 46,
                                 backgroundColor: Color(0xFFdea483),
                               ),
                             ),
-                            // Level Circle with Progress Bar
                             Positioned(
-                              bottom: 0, // Adjusted position to show entirely
-                              right: 0, // Adjusted position to show entirely
+                              bottom: 0,
+                              right: 0,
                               child: Stack(
                                 alignment: Alignment.center,
                                 children: [
                                   SizedBox(
-                                    width: 35, // Increased width
-                                    height: 35, // Increased height
+                                    width: 35,
+                                    height: 35,
                                     child: CircularProgressIndicator(
-                                      value: 0.7, // Set progress here
+                                      value: 0.7,
                                       strokeWidth: 6,
                                       valueColor: AlwaysStoppedAnimation<Color>(const Color(0xFF108236)),
                                       backgroundColor: Colors.white,
                                     ),
                                   ),
                                   Container(
-                                    width: 35, // Adjusted width
-                                    height: 35, // Adjusted height
+                                    width: 35,
+                                    height: 35,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Color(0xFF4252B3),
@@ -199,7 +191,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                               color: Colors.white,
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold,
-                                              height: 1, // Adjust line height to reduce space
+                                              height: 1,
                                             ),
                                           ),
                                         ],
@@ -211,7 +203,6 @@ class _ProfilPageState extends State<ProfilPage> {
                             ),
                           ],
                         ),
-
                         SizedBox(height: 8),
                         Text(
                           widget.user['pseudo'],
@@ -254,7 +245,7 @@ class _ProfilPageState extends State<ProfilPage> {
                             ),
                             SizedBox(width: 4),
                             Padding(
-                              padding: const EdgeInsets.only(left: 8.0), // Adjust the left padding as needed
+                              padding: const EdgeInsets.only(left: 8.0),
                               child: SvgPicture.asset(
                                 'lib/img/coins.svg',
                                 height: 28,
@@ -265,14 +256,12 @@ class _ProfilPageState extends State<ProfilPage> {
                       ],
                     ),
                   ),
-
-                  // Right Column: Buttons with Icons
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       for (var icon in ['settings.svg', 'trophy.svg', 'sticker.svg', 'share.svg'])
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10.0), // Adjust the vertical padding as needed
+                          padding: const EdgeInsets.symmetric(vertical: 10.0),
                           child: GestureDetector(
                             onTap: () {
                               // Add actions for each button as needed
@@ -281,13 +270,13 @@ class _ProfilPageState extends State<ProfilPage> {
                               padding: EdgeInsets.all(4),
                               decoration: BoxDecoration(
                                 color: Color(0xFF4252B3),
-                                shape: icon == 'share.svg' ? BoxShape.circle : BoxShape.rectangle, // Make the share button round
-                                borderRadius: icon == 'share.svg' ? null : BorderRadius.circular(8), // Apply border radius only to non-round buttons
+                                shape: icon == 'share.svg' ? BoxShape.circle : BoxShape.rectangle,
+                                borderRadius: icon == 'share.svg' ? null : BorderRadius.circular(8),
                               ),
                               child: SvgPicture.asset(
                                 'lib/img/$icon',
-                                height: icon == 'share.svg' ? 35 : 38, // Set the height for share.svg
-                                color: Colors.white, // Set the color to white
+                                height: icon == 'share.svg' ? 35 : 38,
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -299,7 +288,6 @@ class _ProfilPageState extends State<ProfilPage> {
             ],
           ),
         ),
-        // Additional content can go here if needed
       ],
     );
   }
