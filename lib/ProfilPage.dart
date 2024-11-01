@@ -64,14 +64,10 @@ class _ProfilPageState extends State<ProfilPage> {
 
     return Column(
       children: [
-        // Upper section with rounded bottom corners and background color
+        // Upper section with background color
         Container(
           decoration: BoxDecoration(
             color: Color(0xFF1a1750),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ),
           ),
           padding: const EdgeInsets.all(16.0),
           child: Column(

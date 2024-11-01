@@ -48,6 +48,8 @@ flutter:
     - lib/img/premium.png
     - lib/img/shield.svg
     - lib/img/crown.svg
+    - lib/img/title_gamepass.png
+    - lib/img/saison_progressbar.png
 
   fonts:
     - family: Poppins

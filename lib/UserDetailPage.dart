@@ -19,7 +19,7 @@ class UserDetailPage extends StatelessWidget {
           child: Column(
             children: [
               ProfilPage(user: user), // Use the ProfilPage widget
-              GeniusPass(), // Add the GeniusPass widget
+              GeniusPass(user: user), // Pass the user parameter to GeniusPass
               StatsPage(user: user), // Use the StatsPage widget
             ],
           ),
