@@ -46,6 +46,9 @@ flutter:
     - lib/img/sticker.svg
     - lib/img/share.svg
     - lib/img/premium.png
+    - lib/img/shield.svg
+    - lib/img/crown.svg
+
   fonts:
     - family: Poppins
       fonts:
