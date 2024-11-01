@@ -85,7 +85,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                     height: 45,
                     child: CircularProgressIndicator(
                       value: 0.7,
-                      strokeWidth: 4,
+                      strokeWidth: 3,
                       valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF108236)),
                       backgroundColor: Colors.transparent,
                     ),
@@ -117,9 +117,9 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                       Text(
                         balance != null ? _formatBalance(balance!) : '0',
                         style: poppinsTextStyle.copyWith(
-                          color: Color(0xFF4252B3),
+                          color: Color(0xFF333C75), // Same color as the rank below
                           fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                          fontSize: 14.2,
                         ),
                       ),
                     ],

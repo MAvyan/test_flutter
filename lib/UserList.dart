@@ -20,55 +20,55 @@ class UserList extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Color(0xFFECF1FF),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Combining CLASSEMENT and AMIS into a single Column
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'CLASSEMENT',
-                            style: poppinsTextStyle.copyWith(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF333C75),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Combining CLASSEMENT and AMIS into a single Column
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'CLASSEMENT',
+                              style: poppinsTextStyle.copyWith(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF333C75),
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 2), // Reduced space between CLASSEMENT and AMIS
-                          Text(
-                            'AMIS',
-                            style: poppinsTextStyle.copyWith(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF333C75),
+                            SizedBox(height: 2), // Reduced space between CLASSEMENT and AMIS
+                            Text(
+                              'AMIS',
+                              style: poppinsTextStyle.copyWith(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF333C75),
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 4),
-                  Text(
-                    'Compare ton classement avec tes amis et regarde lequel est le meilleur d\'entre vous',
-                    style: poppinsTextStyle.copyWith(
-                      fontSize: 18,
-                      color: Color(0xFF333C75),
+                          ],
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: 4),
+                    Text(
+                      'Compare ton classement avec tes amis et regarde lequel est le meilleur d\'entre vous',
+                      style: poppinsTextStyle.copyWith(
+                        fontSize: 18,
+                        color: Color(0xFF333C75),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              child: StreamBuilder(
+              StreamBuilder(
                 stream: users.snapshots(),
                 builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
@@ -82,6 +82,8 @@ class UserList extends StatelessWidget {
                   data.sort((a, b) => (a['global_rank'] as int).compareTo(b['global_rank'] as int));
 
                   return ListView.builder(
+                    shrinkWrap: true, // Added to make ListView scrollable inside SingleChildScrollView
+                    physics: NeverScrollableScrollPhysics(), // Disable ListView's own scrolling
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     itemCount: data.length,
                     itemBuilder: (context, index) {
@@ -202,8 +204,8 @@ class UserList extends StatelessWidget {
                   );
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
