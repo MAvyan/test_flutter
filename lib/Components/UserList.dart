@@ -22,7 +22,7 @@ class UserList extends StatelessWidget {
         color: Color(0xFFECF1FF),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14.0), // Added padding
+            padding: const EdgeInsets.symmetric(horizontal: 14.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

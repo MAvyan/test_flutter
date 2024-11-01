@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intl/intl.dart'; // Import the intl package
+import 'package:intl/intl.dart';
 
 class TopNavigationBar extends StatefulWidget implements PreferredSizeWidget {
   @override
@@ -45,7 +45,6 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    // Define a base text style for Poppins
     const poppinsTextStyle = TextStyle(fontFamily: 'Poppins');
 
     return Container(
@@ -56,7 +55,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: Offset(0, 3),
           ),
         ],
       ),
@@ -102,7 +101,6 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
               ),
               SizedBox(width: 8),
 
-              // Balance and Ranking Texts
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,7 +115,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                       Text(
                         balance != null ? _formatBalance(balance!) : '0',
                         style: poppinsTextStyle.copyWith(
-                          color: Color(0xFF333C75), // Same color as the rank below
+                          color: Color(0xFF333C75),
                           fontWeight: FontWeight.bold,
                           fontSize: 14.2,
                         ),
@@ -155,7 +153,6 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
               onTap: () {
-                // Add your onTap logic here
               },
               child: Container(
                 decoration: BoxDecoration(

@@ -1,17 +1,17 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'Components/TopNavigationBar.dart'; // Import the TopNavigationBar file
+import 'Components/TopNavigationBar.dart';
 import 'Components/BottomNavigationBar.dart';
-import 'Components/UserList.dart';          // Import the UserList widget
-import 'package:firebase_core/firebase_core.dart';  // Import Firebase Core
-import 'firebase_options.dart';  // Import the generated Firebase options
+import 'Components/UserList.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();  // Ensure Flutter binding
-  await Firebase.initializeApp(               // Initialize Firebase
+  WidgetsFlutterBinding.ensureInitialized(); 
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());                            // Run your app
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: TopNavigationBar(), // Add TopNavigationBar here
-        body: UserList(),            // Use UserList widget to display data
-        bottomNavigationBar: BottomNavBar(), // Bottom nav
+        appBar: TopNavigationBar(),
+        body: UserList(),
+        bottomNavigationBar: BottomNavBar(),
       ),
     );
   }
