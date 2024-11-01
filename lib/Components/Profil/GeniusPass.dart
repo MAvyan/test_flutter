@@ -89,7 +89,7 @@ class GeniusPass extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 2),
+                        padding: EdgeInsets.only(top: 2, left : 28),
                         child: Stack(
                           children: [
                             Image.asset(
