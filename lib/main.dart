@@ -1,8 +1,8 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'TopNavigationBar.dart'; // Import the TopNavigationBar file
-import 'BottomNavigationBar.dart';
-import 'UserList.dart';          // Import the UserList widget
+import 'Components/TopNavigationBar.dart'; // Import the TopNavigationBar file
+import 'Components/BottomNavigationBar.dart';
+import 'Components/UserList.dart';          // Import the UserList widget
 import 'package:firebase_core/firebase_core.dart';  // Import Firebase Core
 import 'firebase_options.dart';  // Import the generated Firebase options
 

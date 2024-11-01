@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'UserDetailPage.dart';
+import 'Profil/UserDetailPage.dart';
 
 class UserList extends StatelessWidget {
   final String connectedUser = "wSibajYUNWp62yLeMXaO";
@@ -12,7 +12,7 @@ class UserList extends StatelessWidget {
   Widget build(BuildContext context) {
     const poppinsTextStyle = TextStyle(fontFamily: 'Poppins');
 
-    String _formatBalance(int balance) {
+    String formatBalance(int balance) {
       final formatter = NumberFormat('#,###', 'en_US');
       return formatter.format(balance).replaceAll(',', ' ');
     }
@@ -182,7 +182,7 @@ class UserList extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      _formatBalance(user['balance']),
+                                      formatBalance(user['balance']),
                                       style: poppinsTextStyle.copyWith(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
