@@ -7,9 +7,9 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 2; // Par défaut à "Accueil"
+  int _selectedIndex = 2; // Default to "Accueil"
 
-  // Liste des icônes SVG pour la navbar, avec les versions normales et sélectionnées
+  // List of SVG icons for the navbar, with normal and selected versions
   final List<Map<String, String>> _svgIcons = [
     {'normal': 'lib/img/podium.svg', 'selected': 'lib/img/podium_primary.svg'},
     {'normal': 'lib/img/trophy.svg', 'selected': 'lib/img/trophy_primary.svg'},
@@ -26,13 +26,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    const poppinsTextStyle = TextStyle(fontFamily: 'Poppins');
+
     return BottomNavigationBar(
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
-      selectedItemColor: Color(0xFF7584FF), // Couleur bleu-violet
+      selectedItemColor: Color(0xFF7584FF), // Blue-violet color
       unselectedItemColor: Colors.grey,
+      selectedLabelStyle: poppinsTextStyle.copyWith(
+        fontWeight: FontWeight.bold,
+        fontSize: 12,
+      ),
+      unselectedLabelStyle: poppinsTextStyle.copyWith(
+        fontSize: 12,
+      ),
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset(

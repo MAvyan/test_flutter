@@ -16,6 +16,8 @@ dependencies:
   provider: ^6.0.0
   firebase_core: ^3.6.0
   cloud_firestore: ^5.4.4
+  intl: ^0.17.0 # Add this line
+
 firebase_core: latest_version
 cloud_firestore: latest_version
 
@@ -40,3 +42,18 @@ flutter:
     - lib/img/shop.svg
     - lib/img/person.png
     - lib/img/coins.svg
+    - lib/img/settings.svg
+    - lib/img/sticker.svg
+    - lib/img/share.svg
+    - lib/img/premium.png
+    - lib/img/shield.svg
+    - lib/img/crown.svg
+    - lib/img/title_gamepass.png
+    - lib/img/saison_progressbar.png
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+        - asset: fonts/Poppins-Bold.ttf
+          weight: 700
