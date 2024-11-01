@@ -16,6 +16,7 @@ class GeniusPass extends StatelessWidget {
       color: Color(0xFFECF1FF), // Outer background color
       child: Center(
         child: Stack(
+          clipBehavior: Clip.none,
           children: [
             // Top half with darker blue, bottom half with lighter blue
             Positioned.fill(
@@ -63,7 +64,7 @@ class GeniusPass extends StatelessWidget {
             // Main content container with added margin at the bottom
             Center(
               child: Padding(
-                padding: EdgeInsets.only(bottom: 20), // Adjust the value as needed
+                padding: EdgeInsets.only(bottom: 40), // Adjust the value as needed
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   decoration: BoxDecoration(
@@ -126,6 +127,45 @@ class GeniusPass extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+              ),
+            ),
+            // Smaller div at the bottom center
+            Positioned(
+              bottom: 30, // Adjust the value to overlap the main div
+              left: MediaQuery.of(context).size.width / 2 - 56, // Center the div
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12), // Reduced padding
+                decoration: BoxDecoration(
+                  color: Color(0xFF7584FF), // Same color as the 'Retour' button
+                  borderRadius: BorderRadius.circular(20), // Really rounded corners
+                  border: Border.all(color: Colors.white, width: 2), // White border
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 3,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Voir plus',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 14, // Reduced font size
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    SizedBox(width: 2), // Reduced space between text and icon
+                    Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 14, // Reduced icon size
+                    ),
+                  ],
                 ),
               ),
             ),

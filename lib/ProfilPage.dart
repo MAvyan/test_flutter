@@ -76,7 +76,7 @@ class _ProfilPageState extends State<ProfilPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
+                  padding: const EdgeInsets.only(top: 16.0), // Reduced top padding
                   child: GestureDetector(
                     onTap: () => Navigator.of(context).pop(),
                     child: Container(
@@ -104,8 +104,6 @@ class _ProfilPageState extends State<ProfilPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
-
               // Main content row with left, center, and right columns
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -288,7 +286,7 @@ class _ProfilPageState extends State<ProfilPage> {
                               ),
                               child: SvgPicture.asset(
                                 'lib/img/$icon',
-                                height: icon == 'share.svg' ? 35 : 40, // Set the height for share.svg
+                                height: icon == 'share.svg' ? 35 : 38, // Set the height for share.svg
                                 color: Colors.white, // Set the color to white
                               ),
                             ),
